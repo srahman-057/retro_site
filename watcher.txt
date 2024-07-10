@@ -1,1 +1,0 @@
-./tailwind_exec -i input.css -o output.css --watch
