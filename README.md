@@ -37,3 +37,7 @@ Tailwind CSS is written in JavaScript and usually distributed as an NPM package.
 * Make window movable.
 * Spawn multiple windows on the screen at once and seamlessly close transtion between them.
 * Show open windows on the taskbar.
+
+## Acknowledgement
+* Favicon used from this beautiful origami pack: https://www.flaticon.com/free-icons/origami
+* Retro icons taken from: https://aconfuseddragon.itch.io/windows-95-plus-1
