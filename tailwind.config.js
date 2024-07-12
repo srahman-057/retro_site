@@ -4,7 +4,11 @@ module.exports = {
     '*.html'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        shaston: ["shaston","sans-serif"],
+      }
+    }
   },
   plugins: [],
 }

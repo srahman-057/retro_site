@@ -1,15 +1,30 @@
 <html>
 <head>
 
-<title>Test</title>
+<title>Welcome | Sohel Mozid Rahman</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="output.css">
+<link rel="icon" href="media/icon.png">
+
+<script>
+
+function updateDateTime() {
+        const now = new Date();
+        const currentDateTime = now.toLocaleTimeString();
+        document.querySelector('#datetime').textContent = currentDateTime;
+      }
+
+      // call the `updateDateTime` function every second
+      setInterval(updateDateTime, 1000);
+
+</script>
+
+
 
 </head>
 
 <body>
-
-<div class="flex flex-col h-screen">
+<div class="flex flex-col h-full">
   <header class="py-2 bg-gray-800 text-white text-center">
     Sohel Mozid Rahman
   </header>
@@ -19,16 +34,72 @@
     <!-- Main content -->
     <div class="flex flex-row h-full text-white">
       <!-- Sidebar, which contains folder icons -->
-      <div class="flex basis-1/6 bg-zinc-600">
+      <div class="flex py-5 px-2 basis-1/6">
         
-        01
+        <div class="flex flex-col gap-8">
+          <div><a href="#"><img src="media/computer.png"></a></div>
+          <div><a href="#"><img src="media/cv.png"></a></div>
+          <div><a href="https://github.com/sohelrahman97" target="_blank" rel="noopener noreferrer" title="GitHub"><img src="media/github.png"></a></div>
+        </div>
+        
+        
+
+
       </div>
       
       <!-- Window section, which contains padding and then a window at the center-->
-      <div class="flex basis-5/6 p-20 bg-black">
-        
-        <div class="w-full h-full p-6 border border-8">
-          I'm a centered div using margins!
+      <div class="flex basis-5/6 py-5 px-2">
+
+        <div class="w-full h-full border border-8 overflow-y-auto bg-black">
+          <div class="sticky top-0 bg-black">
+            <div class="grid grid-cols-2 px-1 bg-black">
+              <div class="place-content-center"><p>About me</p></div>
+              <div class="place-self-end"><img src="media/right_icon.png"></div>
+            </div>
+            <hr class="border-4">
+          </div>
+
+
+
+          <div class="p-6">
+            <img src="media/suit.png" class="object-scale-down float-left lg:pr-8 md:pr-3 sm:pr-2">
+            
+          
+            <article class="text-pretty">
+              
+            
+            <h1 class="text-indigo-500"><u>Intro</u></h1>
+            <p>Hi, I'm Sohel! Like many people in tech, I grew up as an avid gamer. The seeds of a future career in IT were planted when I started tinkering with the media files in Grand Theft Auto - San Andreas, located the texture files, and realized that I could edit them to make my in-game character wear t-shirts with my own designs! It created a lasting interest in me regarding tech . </p><br>
+            
+            <h1 class="text-rose-400"><u>Coding</u></h1>
+            <p>My coding journey began when I randomly bought the book "Teach Yourself C" by Herbert Schildt. I read the first few chapters, did the exercises, and was having so much fun that I finished the whole book! Over the years, during my personal time as well as during my undergradate and graduate degrees in Computer Science, I picked up a number of different skills and gained the ability to quickly become familiar with new tech stacks as needed.</p><br>
+
+            <h1 class="text-sky-600"><u>Skills</u></h1>
+            <p>I have worked with/have familiarity with the following:</p>
+              <ul class="list-disc pl-10">
+                <li>Python</li>
+                <li>Django</li>
+                <li>C/C++/C#</li>
+                <li>SQL</li>
+                <li>Unity Game Engine</li>
+              </ul>
+            <br>
+
+            
+            <h1 class="text-amber-600"><u>Projects</u></h1>
+              <ul class="list-disc pl-10">
+                <li><u><a href="https://github.com/sohelrahman97/genetic-arcade" target="_blank" rel="noopener noreferrer" class="text-green-700">genetic-arcade</a></u>: a python based project that showcases the power of genetic algorithms in a variety of visual environments.</li>
+                <li><u><a href="https://github.com/sohelrahman97/retro_site" target="_blank" rel="noopener noreferrer" class="text-green-700">retro_site</a></u>: a web project that aims to recreate a nostalgic UI look and feel by drawing inspiration from retro operating systems such as Windows 95 and 98.</li>
+                <li><u><a href="https://github.com/sohelrahman97?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-green-700">github</a></u>: other projects.</li>
+              </ul>
+            
+
+            </article>
+          </div>
+          
+          
+          
+
         </div>
 
       </div>
@@ -38,8 +109,16 @@
   </main>
 
 
-  <footer class="py-2 bg-gray-800 text-left text-white">
-    <b>Start</b>
+  <footer class="py-2 px-1 bg-gray-800 text-white">
+    <!-- The footer has a grid with three columns, with two columns combined together-->
+
+
+    <div class="grid grid-cols-3">
+      <div class="">Start</div>
+      <div class="col-span-2 place-self-end"><span id="datetime"></span></div>
+
+    </div>
+
   </footer>
 </div>
 

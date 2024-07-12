@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-
+  @font-face {
+    font-family: "shaston";
+    src: url("media/shaston320.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+  }
+  body{
+    font-family: shaston;
+    background-color: rgb(39 39 42);
+  }
 }
 
