@@ -619,6 +619,10 @@ body{
   float: left;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }

@@ -17,6 +17,16 @@ function updateDateTime() {
       // call the `updateDateTime` function every second
       setInterval(updateDateTime, 1000);
 
+function toggleShow() {
+  var x = document.getElementById("mainDiv");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
 </script>
 
 
@@ -37,7 +47,7 @@ function updateDateTime() {
       <div class="flex py-5 px-2 basis-1/6">
         
         <div class="flex flex-col gap-8">
-          <div><a href="#"><img src="media/computer.png"></a></div>
+          <div><a href="#" id="myLink" onClick=javascript:toggleShow()><img src="media/computer.png"></a></div>
           <div><a href="#"><img src="media/cv.png"></a></div>
           <div><a href="https://github.com/sohelrahman97" target="_blank" rel="noopener noreferrer" title="GitHub"><img src="media/github.png"></a></div>
         </div>
@@ -50,7 +60,7 @@ function updateDateTime() {
       <!-- Window section, which contains padding and then a window at the center-->
       <div class="flex basis-5/6 py-5 px-2">
 
-        <div class="w-full h-full border border-8 overflow-y-auto bg-black">
+        <div class="w-full h-full border border-8 overflow-y-auto bg-black" id="mainDiv">
           <div class="sticky top-0 bg-black">
             <div class="grid grid-cols-2 px-1 bg-black">
               <div class="place-content-center"><p>About me</p></div>
