@@ -603,6 +603,10 @@ body{
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .sticky {
   position: sticky;
 }
@@ -629,6 +633,10 @@ body{
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-full {
