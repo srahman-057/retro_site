@@ -2,6 +2,8 @@
 
 retro_site is a web project that aims to recreate a nostalgic UI look and feel by drawing inspiration from retro operating systems such as Windows 95 and 98. 
 
+<img width="872" height="691" alt="image" src="https://github.com/user-attachments/assets/1e1179e7-7a61-4bb1-a99a-5b57eb56b553" />
+
 ## Under the hood
 
 The tech stack has been kept barebones and simple intentionally - this was meant to be a single page, static personal website. The reason being that I intended to host it in an AWS S3 bucket and utilize that sweet free usage tier! This project utilizes the following:
