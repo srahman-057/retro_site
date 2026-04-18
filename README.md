@@ -2,7 +2,8 @@
 
 retro_site is a web project that aims to recreate a nostalgic UI look and feel by drawing inspiration from retro operating systems such as Windows 95 and 98. 
 
-<img width="872" height="691" alt="image" src="https://github.com/user-attachments/assets/1e1179e7-7a61-4bb1-a99a-5b57eb56b553" />
+<img width="874" height="693" alt="image" src="https://github.com/user-attachments/assets/abebd0f8-a46c-4009-adcf-83ef9d20e630" />
+
 
 ## Under the hood
 
