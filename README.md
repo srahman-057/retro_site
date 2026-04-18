@@ -1,9 +1,8 @@
 # retro_site
 
-retro_site is a web project that aims to recreate a nostalgic UI look and feel by drawing inspiration from retro operating systems such as Windows 95 and 98. 
+retro_site is a web project that aims to recreate a nostalgic UI look and feel by drawing inspiration from retro operating systems such as Windows 95 and 98. Screenshot from deployment at https://www.srahman.io/: 
 
-<img width="874" height="693" alt="image" src="https://github.com/user-attachments/assets/abebd0f8-a46c-4009-adcf-83ef9d20e630" />
-
+<img width="998" height="687" alt="image" src="https://github.com/user-attachments/assets/1d6fe412-a48f-4cda-80f9-cb36ac44f948" />
 
 ## Under the hood
 
