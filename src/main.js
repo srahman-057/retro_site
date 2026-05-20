@@ -27,7 +27,7 @@ const combinedPortfolioText = `
       <div class="flex py-5 px-2 basis-1/6">
         
         <div class="flex flex-col gap-8">
-          <div><a href="#" id="myLink" onClick=javascript:toggleShow()><img src="src/assets/computer.png"></a></div>
+          <div><a href="#" id="windowToggle" onClick=javascript:toggleShow()><img src="src/assets/computer.png"></a></div>
           <div><a href=${resumeURL} target="_blank" rel="noopener noreferrer" title="resume"><img src="src/assets/resume.png"></a></div>
           <div><a href=${githubURL} target="_blank" rel="noopener noreferrer" title="GitHub"><img src="src/assets/github.png"></a></div>
         </div>
@@ -48,13 +48,10 @@ const combinedPortfolioText = `
 
           <div class="p-6">
             <img src="src/assets/suit.png" class="object-scale-down float-left lg:pr-8 md:pr-3 sm:pr-2">
-          
             <article class="text-pretty">
-            
               ${portfolioText}
             </article>
           </div>
-          
         </div>
       </div>
     </div>
@@ -64,18 +61,21 @@ const combinedPortfolioText = `
 
   <footer class="py-2 px-1 bg-gray-800 text-white">
     <!-- The footer has a grid with three columns, with two columns combined together-->
-
-
     <div class="grid grid-cols-3">
       <div class="">Start</div>
       <div class="col-span-2 place-self-end"><span id="datetime"></span></div>
-
     </div>
-
   </footer>
 </div>
 `
+// Render the combined portfolio text in the app div
 document.querySelector('#app').innerHTML = combinedPortfolioText;
+
+// Window toggle functionality
+const toggle = document.querySelector('#windowToggle');
+toggle.addEventListener('click', function(event) {
+  toggleShow();
+});
 
 
 
