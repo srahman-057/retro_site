@@ -6,8 +6,8 @@ export async function portfolioTextRead(){
         const response = await fetch(apiURL);
         const responseJSON = await response.json();
         
-        // Insert API response into portfolio section
-        document.getElementById("portfolio-text").innerHTML = responseJSON.data;
+        // Return API response as string
+        return responseJSON.data;
     }
     catch(error){
         console.log("Error accessing portfolio API:");
