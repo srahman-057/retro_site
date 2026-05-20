@@ -7,7 +7,7 @@ export async function portfolioTextRead(){
         }
 
         const result = await response.json();
-        // console.log(result.data);
+        console.log(result);
         return result;
     } catch (error) {
         console.error(error.message);
