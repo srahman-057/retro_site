@@ -1,4 +1,8 @@
 import './style.css'
+import computerIcon from './assets/computer.png'
+import resumeIcon from './assets/resume.png'
+import githubIcon from './assets/github.png'
+import suitImage from './assets/suit.png'
 
 import { updateDateTime, toggleShow } from './scripts/utilityFunctions.js'
 import { portfolioTextRead } from './scripts/portfolioTextRead.js'
@@ -28,9 +32,9 @@ const combinedPortfolioText = `
       <div class="flex py-5 px-2 basis-1/6">
         
         <div class="flex flex-col gap-8">
-          <div><a href="#" id="windowToggle" onClick=javascript:toggleShow()><img src="src/assets/computer.png"></a></div>
-          <div><a href=${resumeURL} target="_blank" rel="noopener noreferrer" title="resume"><img src="src/assets/resume.png"></a></div>
-          <div><a href=${githubURL} target="_blank" rel="noopener noreferrer" title="GitHub"><img src="src/assets/github.png"></a></div>
+          <div><a href="#" id="windowToggle" onClick=javascript:toggleShow()><img src=${computerIcon}></a></div>
+          <div><a href=${resumeURL} target="_blank" rel="noopener noreferrer" title="resume"><img src=${resumeIcon}></a></div>
+          <div><a href=${githubURL} target="_blank" rel="noopener noreferrer" title="GitHub"><img src=${githubIcon}></a></div>
         </div>
 
       </div>
@@ -48,7 +52,7 @@ const combinedPortfolioText = `
           </div>
 
           <div class="p-6">
-            <img src="src/assets/suit.png" class="object-scale-down float-left lg:pr-8 md:pr-3 sm:pr-2">
+            <img src=${suitImage} class="object-scale-down float-left lg:pr-8 md:pr-3 sm:pr-2">
             <article class="text-pretty">
 
             <h1 class="text-indigo-500"><u>Intro</u></h1>
