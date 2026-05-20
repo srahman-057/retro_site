@@ -17,17 +17,22 @@ const resumeURL = import.meta.env.VITE_RESUME_URL;
 const linkedinURL = import.meta.env.VITE_LINKEDIN_URL;
 const githubURL = import.meta.env.VITE_GITHUB_URL;
 
+var parsedPortfolioText = ""; // Initialize parsed portfolio text as empty string, will be updated with API response  
+var portfolioJSON = null; // Initialize portfolio JSON as null, will be updated with API response
+
 // Portfolio API read
 try{
-  const portfolioJSON = await portfolioTextRead();
+  portfolioJSON = await portfolioTextRead();
   if(!portfolioJSON){
     throw new Error("Portfolio API response is empty or undefined.");
   }
-  const parsedPortfolioText = portfolioJSON.data;
+  parsedPortfolioText = portfolioJSON.data;
 }
 catch(error){
     console.error("Error reading portfolio API:");
     console.error(error);
+    console.log("Portfolio data");
+    console.log(portfolioJSON);
 } 
 
 if(!parsedPortfolioText){
