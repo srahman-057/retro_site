@@ -18,8 +18,22 @@ const linkedinURL = import.meta.env.VITE_LINKEDIN_URL;
 const githubURL = import.meta.env.VITE_GITHUB_URL;
 
 // Portfolio API read
-const portfolioJSON = await portfolioTextRead();
-const parsedPortfolioText = portfolioJSON.data;
+try{
+  const portfolioJSON = await portfolioTextRead();
+  if(!portfolioJSON){
+    throw new Error("Portfolio API response is empty or undefined.");
+  }
+  const parsedPortfolioText = portfolioJSON.data;
+}
+catch(error){
+    console.error("Error reading portfolio API:");
+    console.error(error);
+} 
+
+if(!parsedPortfolioText){
+  console.error("Parsed portfolio text is empty or undefined. Making it empty.");
+  parsedPortfolioText = "";
+}
 
 const staticPortfolioText = `
             <h1 class="text-indigo-500"><u>Intro</u></h1>
