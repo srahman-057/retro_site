@@ -1,17 +1,15 @@
 export async function portfolioTextRead(){
-    try{
-        const apiURL = import.meta.env.VITE_PORTFOLIO_API;
-
-        // API fetch
+    const apiURL = import.meta.env.VITE_PORTFOLIO_API;
+    try {
         const response = await fetch(apiURL);
-        const responseJSON = await response.json();
-        
-        // Return API response as string
-        return responseJSON.data;
-    }
-    catch(error){
-        console.log("Error accessing portfolio API:");
-        console.error(error);
-    }
+        if (!response.ok) {
+        throw new Error(`Response not OK. Response status: ${response.status}`);
+        }
 
+        const result = await response.json();
+        // console.log(result.data);
+        return result;
+    } catch (error) {
+        console.error(error.message);
+    }
 }

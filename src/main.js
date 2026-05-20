@@ -8,13 +8,19 @@ import windowDecorationIcon from './assets/right_icon.png'
 import { updateDateTime, toggleShow } from './scripts/utilityFunctions.js'
 import { portfolioTextRead } from './scripts/portfolioTextRead.js'
 
+// Seed clock with dateTime data
+const now = new Date();
+const currentDateTime = now.toLocaleTimeString();
+
 // Load constants
 const resumeURL = import.meta.env.VITE_RESUME_URL;
 const linkedinURL = import.meta.env.VITE_LINKEDIN_URL;
 const githubURL = import.meta.env.VITE_GITHUB_URL;
 
 // Portfolio API read
-const portfolioText = await portfolioTextRead();
+const portfolioJSON = await portfolioTextRead();
+const parsedPortfolioText = portfolioJSON.data;
+
 const staticPortfolioText = `
             <h1 class="text-indigo-500"><u>Intro</u></h1>
             <p>Hi, I'm Sohel! Like many people in tech, I grew up as an avid gamer. The seeds of a future career in IT were planted when I started tinkering with the media files in Grand Theft Auto - San Andreas, located the texture files, and realized that I could edit them to make my in-game character wear t-shirts with my own designs! It created a lasting interest in me regarding tech. I write about these things and many more on my blog: <u><a href="https://www.pothochari.com/" target="_blank" rel="noopener noreferrer" class="text-green-700">www.pothochari.com</a></u></p><br>
@@ -79,7 +85,7 @@ const combinedPortfolioText = `
             <img src=${suitImage} class="object-scale-down float-left lg:pr-8 md:pr-3 sm:pr-2">
             <article class="text-pretty">
 
-            ${portfolioText}
+            ${parsedPortfolioText}
 
             </article>
           </div>
@@ -94,7 +100,7 @@ const combinedPortfolioText = `
     <!-- The footer has a grid with three columns, with two columns combined together-->
     <div class="grid grid-cols-3">
       <div class="">Start</div>
-      <div class="col-span-2 place-self-end"><span id="datetime"></span></div>
+      <div class="col-span-2 place-self-end"><span id="datetime">${currentDateTime}</span></div>
     </div>
   </footer>
 </div>
