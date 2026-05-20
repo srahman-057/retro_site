@@ -3,12 +3,10 @@ import computerIcon from './assets/computer.png'
 import resumeIcon from './assets/resume.png'
 import githubIcon from './assets/github.png'
 import suitImage from './assets/suit.png'
+import windowDecorationIcon from './assets/right_icon.png'
 
 import { updateDateTime, toggleShow } from './scripts/utilityFunctions.js'
 import { portfolioTextRead } from './scripts/portfolioTextRead.js'
-
-// Update clock value every second
-setInterval(updateDateTime, 1000);
 
 // Load constants
 const resumeURL = import.meta.env.VITE_RESUME_URL;
@@ -46,7 +44,7 @@ const combinedPortfolioText = `
           <div class="sticky top-0 bg-black">
             <div class="grid grid-cols-2 px-1 bg-black">
               <div class="place-content-center"><p>About me</p></div>
-              <div class="place-self-end"><img src="src/assets/right_icon.png"></div>
+              <div class="place-self-end"><img src=${windowDecorationIcon}></div>
             </div>
             <hr class="border-4">
           </div>
@@ -107,6 +105,8 @@ toggle.addEventListener('click', function(event) {
   toggleShow();
 });
 
+// Update clock value every second
+setInterval(updateDateTime, 1000);
 
 
 
