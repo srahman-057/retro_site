@@ -35,11 +35,6 @@ catch(error){
     console.log(portfolioJSON);
 } 
 
-if(!parsedPortfolioText){
-  console.error("Parsed portfolio text is empty or undefined. Making it empty.");
-  parsedPortfolioText = "";
-}
-
 const staticPortfolioText = `
             <h1 class="text-indigo-500"><u>Intro</u></h1>
             <p>Hi, I'm Sohel! Like many people in tech, I grew up as an avid gamer. The seeds of a future career in IT were planted when I started tinkering with the media files in Grand Theft Auto - San Andreas, located the texture files, and realized that I could edit them to make my in-game character wear t-shirts with my own designs! It created a lasting interest in me regarding tech. I write about these things and many more on my blog: <u><a href="https://www.pothochari.com/" target="_blank" rel="noopener noreferrer" class="text-green-700">www.pothochari.com</a></u></p><br>
@@ -66,6 +61,10 @@ const staticPortfolioText = `
                 <li><u><a href="https://github.com/srahman-057/?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-green-700">github</a></u>: other projects.</li>
               </ul>
 `
+if(!parsedPortfolioText){
+  console.error("Parsed portfolio text is empty or undefined. Replacing with static text.");
+  parsedPortfolioText = staticPortfolioText;
+}
 
 const combinedPortfolioText = `
 <div class="flex flex-col h-full">
