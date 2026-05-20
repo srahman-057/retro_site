@@ -13,6 +13,7 @@ const githubURL = import.meta.env.VITE_GITHUB_URL;
 
 // Portfolio API read
 const portfolioText = await portfolioTextRead();
+
 const combinedPortfolioText = `
 <div class="flex flex-col h-full">
   <header class="py-2 bg-gray-800 text-white text-center">
@@ -49,7 +50,32 @@ const combinedPortfolioText = `
           <div class="p-6">
             <img src="src/assets/suit.png" class="object-scale-down float-left lg:pr-8 md:pr-3 sm:pr-2">
             <article class="text-pretty">
-              ${portfolioText}
+
+            <h1 class="text-indigo-500"><u>Intro</u></h1>
+            <p>Hi, I'm Sohel! Like many people in tech, I grew up as an avid gamer. The seeds of a future career in IT were planted when I started tinkering with the media files in Grand Theft Auto - San Andreas, located the texture files, and realized that I could edit them to make my in-game character wear t-shirts with my own designs! It created a lasting interest in me regarding tech. I write about these things and many more on my blog: <u><a href="https://www.pothochari.com/" target="_blank" rel="noopener noreferrer" class="text-green-700">www.pothochari.com</a></u></p><br>
+            
+            <h1 class="text-rose-400"><u>Coding</u></h1>
+            <p>My coding journey began when I randomly bought the book "Teach Yourself C" by Herbert Schildt. I read the first few chapters, did the exercises, and was having so much fun that I finished the whole book! Over the years, during my personal time as well as during my undergradate and graduate degrees in Computer Science, I picked up a number of different skills and gained the ability to quickly become familiar with new tech stacks as needed.</p><br>
+
+            <h1 class="text-sky-600"><u>Skills</u></h1>
+            <p>I have worked with/have familiarity with the following:</p>
+              <ul class="list-disc pl-10">
+                <li>Java, Python, Typescript</li>
+                <li>Spring, React, Node</li>
+                <li>Redis, PostgreSQL</li>
+                <li>AWS, Docker, Kubernetes</li>
+                <li>......and <a href="media/web_resume.pdf"><u>many more</u></li>
+              </ul>
+            <br>
+
+            
+            <h1 class="text-amber-600"><u>Projects</u></h1>
+              <ul class="list-disc pl-10">
+                <li><u><a href="https://github.com/srahman-057/genetic-arcade" target="_blank" rel="noopener noreferrer" class="text-green-700">genetic-arcade</a></u>: Intelligent game agents that teach themselves to navigate a variety of visual environments.​</li>
+                <li><u><a href="https://github.com/srahman-057/retro_site" target="_blank" rel="noopener noreferrer" class="text-green-700">retro_site</a></u>: Retro web UI on a minimal cloud budget. Inspired by Windows 95 and 98.​</li>
+                <li><u><a href="https://github.com/srahman-057/?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-green-700">github</a></u>: other projects.</li>
+              </ul>
+
             </article>
           </div>
         </div>
