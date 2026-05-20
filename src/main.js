@@ -6,15 +6,14 @@ import { portfolioTextRead } from './scripts/portfolioTextRead.js'
 // Update clock value every second
 setInterval(updateDateTime, 1000);
 
+// Load constants
+const resumeURL = import.meta.env.VITE_RESUME_URL;
+const linkedinURL = import.meta.env.VITE_LINKEDIN_URL;
+const githubURL = import.meta.env.VITE_GITHUB_URL;
+
 // Portfolio API read
-  const portfolioText = await portfolioTextRead();
-  console.log("Portfolio API response:");
-  console.log(portfolioText);
-
-
-
-
-document.querySelector('#app').innerHTML = `
+const portfolioText = await portfolioTextRead();
+const combinedPortfolioText = `
 <div class="flex flex-col h-full">
   <header class="py-2 bg-gray-800 text-white text-center">
     Sohel Mozid Rahman
@@ -29,12 +28,9 @@ document.querySelector('#app').innerHTML = `
         
         <div class="flex flex-col gap-8">
           <div><a href="#" id="myLink" onClick=javascript:toggleShow()><img src="src/assets/computer.png"></a></div>
-          <div><a href="src/assets/web_resume.pdf" target="_blank" rel="noopener noreferrer" title="CV"><img src="src/assets/resume.png"></a></div>
-          <div><a href="https://github.com/srahman-057" target="_blank" rel="noopener noreferrer" title="GitHub"><img src="src/assets/github.png"></a></div>
+          <div><a href=${resumeURL} target="_blank" rel="noopener noreferrer" title="resume"><img src="src/assets/resume.png"></a></div>
+          <div><a href=${githubURL} target="_blank" rel="noopener noreferrer" title="GitHub"><img src="src/assets/github.png"></a></div>
         </div>
-        
-        
-
 
       </div>
       
@@ -55,8 +51,7 @@ document.querySelector('#app').innerHTML = `
           
             <article class="text-pretty">
             
-            ${portfolioText}
-          
+              ${portfolioText}
             </article>
           </div>
           
@@ -80,6 +75,7 @@ document.querySelector('#app').innerHTML = `
   </footer>
 </div>
 `
+document.querySelector('#app').innerHTML = combinedPortfolioText;
 
 
 
