@@ -17,16 +17,14 @@ const resumeURL = import.meta.env.VITE_RESUME_URL;
 const linkedinURL = import.meta.env.VITE_LINKEDIN_URL;
 const githubURL = import.meta.env.VITE_GITHUB_URL;
 
-var parsedPortfolioText = ""; // Initialize parsed portfolio text as empty string, will be updated with API response  
-var portfolioJSON = null; // Initialize portfolio JSON as null, will be updated with API response
-
 // Portfolio API read
 
-portfolioJSON = await portfolioTextRead();
+const portfolioJSON = await portfolioTextRead();
 if(!portfolioJSON){
   console.log("Portfolio API response is empty or undefined.");
 }
-parsedPortfolioText = portfolioJSON.data;
+
+const parsedPortfolioText = portfolioJSON.data;
 
 const staticPortfolioText = `
             <h1 class="text-indigo-500"><u>Intro</u></h1>
