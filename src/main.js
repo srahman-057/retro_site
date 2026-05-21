@@ -21,19 +21,12 @@ var parsedPortfolioText = ""; // Initialize parsed portfolio text as empty strin
 var portfolioJSON = null; // Initialize portfolio JSON as null, will be updated with API response
 
 // Portfolio API read
-try{
-  portfolioJSON = await portfolioTextRead();
-  if(!portfolioJSON){
-    throw new Error("Portfolio API response is empty or undefined.");
-  }
-  parsedPortfolioText = portfolioJSON.data;
+
+portfolioJSON = await portfolioTextRead();
+if(!portfolioJSON){
+  console.log("Portfolio API response is empty or undefined.");
 }
-catch(error){
-    console.error("Error reading portfolio API:");
-    console.error(error);
-    console.log("Portfolio data");
-    console.log(portfolioJSON);
-} 
+parsedPortfolioText = portfolioJSON.data;
 
 const staticPortfolioText = `
             <h1 class="text-indigo-500"><u>Intro</u></h1>
@@ -80,8 +73,8 @@ const combinedPortfolioText = `
       <div class="flex py-5 px-2 basis-1/6">
         
         <div class="flex flex-col gap-8">
-          <div><a href="#" id="windowToggle" onClick=javascript:toggleShow()><img src=${computerIcon}></a></div>
-          <div><a href=${resumeURL} target="_blank" rel="noopener noreferrer" title="resume"><img src=${resumeIcon}></a></div>
+          <div><a href="#" id="windowToggle" title="Toggle Window"><img src=${computerIcon}></a></div>
+          <div><a href=${resumeURL} target="_blank" rel="noopener noreferrer" title="Resume"><img src=${resumeIcon}></a></div>
           <div><a href=${githubURL} target="_blank" rel="noopener noreferrer" title="GitHub"><img src=${githubIcon}></a></div>
         </div>
 

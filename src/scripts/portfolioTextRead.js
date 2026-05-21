@@ -1,15 +1,22 @@
 export async function portfolioTextRead(){
     const apiURL = import.meta.env.VITE_PORTFOLIO_API;
-    try {
-        const response = await fetch(apiURL);
-        if (!response.ok) {
-        throw new Error(`Response not OK. Response status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        console.log(result);
-        return result;
-    } catch (error) {
-        console.error(error.message);
-    }
+    return fetch(apiURL)
+        .then(response => {
+            // 1. Check if the request was successful
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+        // 2. Parse the body as JSON (this returns another promise)
+        return response.json(); 
+    })
+    .then(data => {
+        // 3. Use the actual data here
+        console.log(data);
+        return data; // Return the parsed JSON data to be used in the main script
+    })
+    .catch(error => {
+        // 4. Handle any errors (network issues or code errors)
+        console.error('There was a problem:', error);
+        return null; // Return null to indicate an error occurred
+    });
 }
