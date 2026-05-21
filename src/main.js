@@ -53,8 +53,7 @@ const staticPortfolioText = `
               </ul>
 `
 if(!parsedPortfolioText){
-  console.error("Parsed portfolio text is empty or undefined. Replacing with static text.");
-  parsedPortfolioText = staticPortfolioText;
+  console.error("Parsed portfolio text is empty or undefined. Should use static portfolio text instead.");
 }
 
 const combinedPortfolioText = `
