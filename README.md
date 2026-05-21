@@ -11,7 +11,7 @@ The tech stack has been kept barebones and simple intentionally - this was meant
 * HTML
 * Vanilla JavaScript
 * TailWindCSS
-* Vite
+* Vite 
 
 ## Running the project
 Use npm run dev to run the project.
