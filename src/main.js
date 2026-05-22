@@ -1,4 +1,4 @@
-import './style.css'
+//import './style.css'
 import computerIcon from './assets/computer.png'
 import resumeIcon from './assets/resume.png'
 import githubIcon from './assets/github.png'
@@ -7,24 +7,33 @@ import windowDecorationIcon from './assets/right_icon.png'
 
 import { updateDateTime, toggleShow } from './scripts/utilityFunctions.js'
 import { portfolioTextRead } from './scripts/portfolioTextRead.js'
+import { resumeTextRead } from './scripts/resumeTextRead.js'
 
 // Seed clock with dateTime data
 const now = new Date();
 const currentDateTime = now.toLocaleTimeString();
 
-// Load constants
-const resumeURL = import.meta.env.VITE_RESUME_URL;
-const linkedinURL = import.meta.env.VITE_LINKEDIN_URL;
-const githubURL = import.meta.env.VITE_GITHUB_URL;
+
 
 // Portfolio API read
-
 const portfolioJSON = await portfolioTextRead();
 if(!portfolioJSON){
   console.log("Portfolio API response is empty or undefined.");
 }
 
+// Resume API read
+const resumeJSON = await resumeTextRead();
+if(!resumeJSON){
+  console.log("Resume API response is empty or undefined.");
+}
+
+// Load constants
+const resumeURL = resumeJSON;
+const linkedinURL = import.meta.env.VITE_LINKEDIN_URL;
+const githubURL = import.meta.env.VITE_GITHUB_URL;
+
 const parsedPortfolioText = portfolioJSON.data;
+const parsedResumeText = resumeJSON.data;
 
 const staticPortfolioText = `
             <h1 class="text-indigo-500"><u>Intro</u></h1>

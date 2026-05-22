@@ -11,7 +11,7 @@ export async function portfolioTextRead(){
     })
     .then(data => {
         // 3. Use the actual data here
-        console.log(data);
+        // console.log(data);
         return data; // Return the parsed JSON data to be used in the main script
     })
     .catch(error => {

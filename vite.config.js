@@ -15,6 +15,9 @@ export default defineConfig(({ mode }) => {
     server: {
       port: env.APP_PORT || 5175,
     },
+    build: {
+        modulePreload: false, // Disables module preloading
+    },
     plugins: [
         tailwindcss(),
     ],
