@@ -16,6 +16,13 @@ The tech stack has been kept barebones and simple intentionally - this was meant
 ## Running the project
 Use npm run dev to run the project.
 
+Prior to that, make sure you have the environment variables accessible. Create a .env file in the root of the folder and store the following values in it:
+* VITE_RESUME_URL = "Direct URL of the resume file"
+* VITE_RESUME_API = "REST API that serves a dynamic URL for the resume file. Utilized for testing purposes."
+* VITE_PORTFOLIO_API = "Link to portfolio website"
+* VITE_GITHUB_URL = "Self explanatory"
+* VITE_LINKEDIN_URL = "Self explanatory"
+
 ## Documentation
 * https://tailwindcss.com/docs/
 
