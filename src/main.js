@@ -6,8 +6,11 @@ import suitImage from './assets/suit.png'
 import windowDecorationIcon from './assets/right_icon.png'
 
 import { updateDateTime, toggleShow } from './scripts/utilityFunctions.js'
-import { portfolioTextRead } from './scripts/portfolioTextRead.js'
-import { resumeTextRead } from './scripts/resumeTextRead.js'
+
+// Dedicated API will be created in the future to serve the portfolio text and resume file. 
+// Currently, the text and url shall be utilized through file hosting services.
+// import { portfolioTextRead } from './scripts/portfolioTextRead.js'
+// import { resumeTextRead } from './scripts/resumeTextRead.js'
 
 // Seed clock with dateTime data
 const now = new Date();
@@ -16,24 +19,26 @@ const currentDateTime = now.toLocaleTimeString();
 
 
 // Portfolio API read
-const portfolioJSON = await portfolioTextRead();
-if(!portfolioJSON){
-  console.log("Portfolio API response is empty or undefined.");
-}
+// const portfolioJSON = await portfolioTextRead();
+// if(!portfolioJSON){
+//   console.log("Portfolio API response is empty or undefined.");
+// }
 
-// Resume API read
-const resumeJSON = await resumeTextRead();
-if(!resumeJSON){
-  console.log("Resume API response is empty or undefined.");
-}
+// // Resume API read
+// const resumeJSON = await resumeTextRead();
+// if(!resumeJSON){
+//   console.log("Resume API response is empty or undefined.");
+// }
 
 // Load constants
-const resumeURL = resumeJSON;
+// const resumeURL = resumeJSON;
 const linkedinURL = import.meta.env.VITE_LINKEDIN_URL;
 const githubURL = import.meta.env.VITE_GITHUB_URL;
+const resumeURL = import.meta.env.VITE_RESUME_DIRECT_URL;
 
-const parsedPortfolioText = portfolioJSON.data;
-const parsedResumeText = resumeJSON.data;
+
+// const parsedPortfolioText = portfolioJSON.data;
+// const parsedResumeText = resumeJSON.data;
 
 const staticPortfolioText = `
             <h1 class="text-indigo-500"><u>Intro</u></h1>
@@ -61,9 +66,7 @@ const staticPortfolioText = `
                 <li><u><a href="https://github.com/srahman-057/?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-green-700">github</a></u>: other projects.</li>
               </ul>
 `
-if(!parsedPortfolioText){
-  console.error("Parsed portfolio text is empty or undefined. Should use static portfolio text instead.");
-}
+const parsedPortfolioText = staticPortfolioText;
 
 const combinedPortfolioText = `
 <div class="flex flex-col h-full">
