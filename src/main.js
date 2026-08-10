@@ -54,7 +54,7 @@ const staticPortfolioText = `
                 <li>Spring, React, Node</li>
                 <li>Redis, PostgreSQL</li>
                 <li>AWS, Docker, Kubernetes</li>
-                <li>......and <a href="media/web_resume.pdf"><u>many more</u></li>
+                <li>......and <a href="${resumeURL}"><u>many more</u></a></li>
               </ul>
             <br>
 
